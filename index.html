@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+	<style>
+		
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* === HEADER === */
+header {
+  background: #00217b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ffd166;
+}
+
+/* === HERO SECTION === */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 80px 60px;
+  background: #e0f2f1;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-text h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.hero-text span {
+  color: #002b7b;
+}
+
+.hero-text p {
+  font-size: 18px;
+  max-width: 500px;
+}
+
+.hero img {
+  width: 400px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: #00397b;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 25px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #002a5b;
+}
+
+/* === ABOUT SECTION === */
+.about-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 80px 60px;
+  background: white;
+}
+
+.about-page img {
+  width: 45%;
+  border-radius: 10px;
+  min-width: 300px;
+}
+
+.about-text {
+  width: 50%;
+  min-width: 280px;
+}
+
+.about-text h2 {
+  font-size: 32px;
+  color: #007b3d;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+}
+
+/* === SERVICES SECTION === */
+.services-page {
+  text-align: center;
+  background: #f1f1f1;
+  padding: 80px 60px;
+}
+
+.services-page h2 {
+  color: #00397b;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.service-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.service-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.service-card h3 {
+  margin: 15px 0 10px;
+  color: #004e7b;
+}
+
+.service-card p {
+  font-size: 15px;
+  padding: 0 15px;
+  color: #555;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
+/* === PROJECTS SECTION === */
+.projects-page {
+  background: white;
+  padding: 80px 60px;
+  text-align: center;
+}
+
+.projects-page h2 {
+  font-size: 32px;
+  color: #007b5e;
+  margin-bottom: 40px;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin-top: 10px;
+  color: #00357b;
+}
+
+.project-card p {
+  padding: 10px 15px 20px;
+  font-size: 15px;
+  color: #555;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+
+.contact-header {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.contact-header h2 {
+  font-size: 36px;
+}
+
+form {
+  max-width: 500px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  background: #00447b;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #005b44;
+}
+
+
+footer {
+  background: #000c7b;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 15px;
+}
+
+
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .hero img {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .about-page {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .about-page img {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .service-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+	</style>
+</head>
+<body>
+  
+  <header>
+    <h1>Rajab Wekesa</h1>
+    <nav>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+  <section id="home" class="hero">
+        <div class="hero-text">
+            <h2>Hi, I'm <span>Rajab Wekesa</span></h2>
+            <p>A passionate front-end developer crafting responsive and engaging digital experiences.</p>
+        <a href="#projects" class="btn">View My Work</a>
+        </div>
+        <img src="images/hero.jpg" alt="working at desk">
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about-page">
+    <img src="images/about.png" alt="About Me">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>I am a  front-end developer specializing in web design and development. My goal is to bring ideas to life through beautiful, efficient, and functional websites.</p>
+      <p>I have expertise in HTML, CSS and web performance optimization. I work closely with clients to create sites that align perfectly with their brand and goals.</p>
+      <a href="contact.html" class="btn">Hire Me</a>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="services-page">
+    <h2>My Services</h2>
+    <div class="service-container">
+      <div class="service-card">
+        <img src="images/web1.png" alt="Web Design">
+        <h3>Web Design</h3>
+        <p>Custom, responsive, and visually appealing website designs that reflect your brand identity.</p>
+      </div>
+      <div class="service-card">
+        <img src="images/web2.png" alt="Web Development">
+        <h3>Web Development</h3>
+        <p>Modern, fast, and SEO-optimized websites built with the latest HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="service-card">
+        <img src="images/seo.png" alt="SEO Optimization">
+        <h3>SEO Optimization</h3>
+        <p>Improve your site’s visibility with optimized code, structure, and content strategies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="projects-page">
+    <h2>Recent Projects</h2>
+    <div class="project-gallery">
+      <div class="project-card">
+        <img src="images/project1.png" alt="Portfolio Website">
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio built with HTML and CSS showcasing design and structure.</p>
+
+        <a href="#contact" class="btn">Work With Me</a>
+      </div>
+      <!--contact section-->
+      <h1>Contacts</h1>
+    
+  </section>
+
+  <section id="contact"    class="contact-page">
+    <div class="contact-header" style="background-image:url('images/contact.jpg')">
+      <h2>Let's Work Together</h2>
+    </div>
+
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="6" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p> Portfolio 2025. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
